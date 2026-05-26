@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — GCRI</title>
+  <meta name="description" content="GCRI coordinates multilab replication studies targeting landmark findings in communication science. Each project uses a preregistered, open-science design.">
+  <meta property="og:title" content="Projects — GCRI">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .project-section-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--c-muted);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .rq-section, .timeline-section {
+      margin-top: var(--sp-lg);
+      padding-top: var(--sp-lg);
+      border-top: 1px solid var(--c-border);
+    }
+    .rq-section h4, .timeline-section h4 {
+      font-family: var(--f-serif);
+      font-size: 1.05rem;
+      color: var(--c-primary);
+      margin-bottom: var(--sp-sm);
+    }
+    .project-grid-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-xl);
+      margin-top: var(--sp-md);
+    }
+    .more-soon-card {
+      border: 2px dashed var(--c-border);
+      border-radius: var(--r-lg);
+      padding: var(--sp-xl) var(--sp-lg);
+      text-align: center;
+    }
+    .more-soon-card h3 {
+      font-size: 1.15rem;
+      color: var(--c-muted);
+      margin-bottom: 0.5rem;
+    }
+    .more-soon-card p {
+      font-size: 0.9rem;
+      max-width: 440px;
+      margin: 0 auto var(--sp-md);
+    }
+    @media (max-width: 700px) {
+      .project-grid-two { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     NAVIGATION
+     ══════════════════════════════════════════════ -->
+<nav id="nav" class="solid" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="GCRI — Home">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <line x1="18" y1="5" x2="6"  y2="18" stroke="#3d2f72" stroke-width="1.5" stroke-opacity="0.35"/>
+        <line x1="18" y1="5" x2="30" y2="18" stroke="#3d2f72" stroke-width="1.5" stroke-opacity="0.35"/>
+        <line x1="6"  y1="18" x2="30" y2="18" stroke="#3d2f72" stroke-width="1.5" stroke-opacity="0.35"/>
+        <line x1="6"  y1="18" x2="18" y2="31" stroke="#3d2f72" stroke-width="1.5" stroke-opacity="0.35"/>
+        <line x1="30" y1="18" x2="18" y2="31" stroke="#3d2f72" stroke-width="1.5" stroke-opacity="0.35"/>
+        <circle cx="6"  cy="18" r="3.5" fill="#3d2f72"/>
+        <circle cx="30" cy="18" r="3.5" fill="#3d2f72"/>
+        <circle cx="18" cy="31" r="3.5" fill="#3d2f72"/>
+        <circle cx="18" cy="5"  r="3.5" fill="#c8970e"/>
+      </svg>
+      <span class="logo-text-wrap">
+        <span class="logo-acronym">GCRI</span>
+        <span class="logo-full">Global Communication Reproducibility Initiative</span>
+      </span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html"           data-nav>Home</a></li>
+      <li><a href="members.html"         data-nav>Members</a></li>
+      <li><a href="projects.html"        data-nav>Projects</a></li>
+      <li><a href="contact.html"         data-nav>Contact</a></li>
+      <li><a href="become-a-member.html" class="nav-cta" data-nav>Join</a></li>
+    </ul>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div id="mobile-menu" role="navigation" aria-label="Mobile menu">
+  <ul>
+    <li><a href="index.html"           data-nav>Home</a></li>
+    <li><a href="members.html"         data-nav>Members</a></li>
+    <li><a href="projects.html"        data-nav>Projects</a></li>
+    <li><a href="become-a-member.html" data-nav>Become a Member</a></li>
+    <li><a href="contact.html"         data-nav>Contact</a></li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     PAGE HERO
+     ══════════════════════════════════════════════ -->
+<header class="page-hero" aria-labelledby="page-title">
+  <div class="container">
+    <div class="page-hero-text">
+      <span class="sec-label" style="color:rgba(255,255,255,0.6);">Our Research</span>
+      <h1 id="page-title">Replication Projects</h1>
+      <p>GCRI coordinates multilab replication studies targeting landmark findings in communication science. Each project uses a preregistered, open-science design and recruits labs across countries to maximise statistical power and generalisability. Results are published open-access regardless of outcome.</p>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════
+     PROJECTS
+     ══════════════════════════════════════════════ -->
+<main>
+  <section aria-labelledby="projects-list-heading">
+    <div class="container">
+      <h2 id="projects-list-heading" class="sr-only">All Projects</h2>
+
+      <!-- ── PROJECT 1 ── -->
+      <article class="project-card" aria-labelledby="proj1-title">
+        <div class="project-card-head">
+          <div>
+            <span class="badge badge-active">Active — Launching May 2026</span>
+            <h3 id="proj1-title">The Robustness of Fear Appeals:<br>A Multilab Registered Replication Study</h3>
+            <p class="project-target">Replicating: Witte, K. (1994). Fear control and danger control: A test of the extended parallel process model (EPPM). <em>Communication Monographs, 61</em>, 113–134.</p>
+          </div>
+        </div>
+
+        <div class="project-body">
+          <!-- Stats grid -->
+          <div class="project-stats-grid">
+            <div class="ps-item">
+              <span class="ps-lbl">Funder</span>
+              <span class="ps-val">NWO Replication Studies (Type 3)</span>
+            </div>
+            <div class="ps-item">
+              <span class="ps-lbl">Budget</span>
+              <span class="ps-val">€199,951</span>
+            </div>
+            <div class="ps-item">
+              <span class="ps-lbl">Duration</span>
+              <span class="ps-val">36 months (May 2026 – May 2029)</span>
+            </div>
+            <div class="ps-item">
+              <span class="ps-lbl">Type</span>
+              <span class="ps-val">Multilab Registered Replication</span>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <p>Kim Witte's Extended Parallel Process Model (EPPM) is one of the most influential theories in health communication. Cited over 5,000 times and taught in textbooks worldwide, it underlies major public health campaigns — yet its foundational 1994 empirical test was conducted with only 146 students, never included a 6-week follow-up in its replication record, and has not been tested for generalisability across cultures and populations.</p>
+          <p class="mt-sm">This project conducts the first large-scale, preregistered, multilab replication of the EPPM, recruiting labs across five countries to test whether the core threat × efficacy interaction holds at scale, what the unbiased effect size is, and what moderates cross-lab variation. Stage 1 preregistration will be submitted to a journal offering Registered Replication Reports — guaranteeing publication regardless of outcome.</p>
+
+          <div class="project-grid-two">
+            <!-- Research Questions -->
+            <div class="rq-section">
+              <h4>Research Questions</h4>
+              <ul class="rq-list">
+                <li>Do the core EPPM predictions replicate across labs and populations?</li>
+                <li>What is the unbiased effect size for threat and efficacy appraisals on behavioural intentions?</li>
+                <li>Does the critical threat × efficacy interaction hold in a large, preregistered design?</li>
+                <li>Do maladaptive responses mediate behavioural outcomes?</li>
+                <li>What moderators drive heterogeneity across labs?</li>
+              </ul>
+            </div>
+
+            <!-- Timeline -->
+            <div class="timeline-section">
+              <h4>Project Timeline</h4>
+              <div class="timeline">
+                <div class="timeline-item milestone">
+                  <div class="tl-dot"></div>
+                  <span class="tl-date">May 2026</span>
+                  <p class="tl-event">Project launch &amp; website live</p>
+                </div>
+                <div class="timeline-item">
+                  <div class="tl-dot"></div>
+                  <span class="tl-date">Oct 2026</span>
+                  <p class="tl-event">Stage 1 preregistration submitted</p>
+                </div>
+                <div class="timeline-item">
+                  <div class="tl-dot"></div>
+                  <span class="tl-date">Feb 2027</span>
+                  <p class="tl-event">Protocol finalised; labs recruited</p>
+                </div>
+                <div class="timeline-item">
+                  <div class="tl-dot"></div>
+                  <span class="tl-date">Apr 2027</span>
+                  <p class="tl-event">Pilot testing begins</p>
+                </div>
+                <div class="timeline-item">
+                  <div class="tl-dot"></div>
+                  <span class="tl-date">Apr 2028</span>
+                  <p class="tl-event">Data collection ends</p>
+                </div>
+                <div class="timeline-item">
+                  <div class="tl-dot"></div>
+                  <span class="tl-date">Jun 2028</span>
+                  <p class="tl-event">Meta-analysis</p>
+                </div>
+                <div class="timeline-item milestone">
+                  <div class="tl-dot"></div>
+                  <span class="tl-date">Jan 2029</span>
+                  <p class="tl-event">Manuscript submitted</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team -->
+          <div class="project-team-line">
+            <strong>Project Team&nbsp;&nbsp;</strong>
+            Anita Eerland (PI, Radboud) · Lisa Vandeberg (Radboud) · Philipp K. Masur (VU Amsterdam) · Ivar Vermeulen (VU Amsterdam) · Marieke Fransen (Radboud)
+          </div>
+
+          <!-- Links -->
+          <div style="margin-top:var(--sp-md); display:flex; gap:var(--sp-sm); flex-wrap:wrap;">
+            <a href="#" class="btn btn-outline" aria-label="OSF Preregistration (forthcoming)">OSF Preregistration — TBD</a>
+            <a href="#" class="btn btn-outline" aria-label="NWO Project Page (forthcoming)">NWO Project Page — TBD</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── PROJECT 2 ── -->
+      <article class="project-card" aria-labelledby="proj2-title">
+        <div class="project-card-head">
+          <div>
+            <span class="badge" style="background-color:#4CAF50; color:white;">Active — Batch 1 Published</span>
+            <h3 id="proj2-title">Online Privacy and Self-Disclosure:<br>A Direct Replication Program</h3>
+            <p class="project-target">Direct replication of 10 landmark studies across five thematic batches on privacy concerns, self-disclosure behavior, and privacy protection strategies on social media platforms.</p>
+          </div>
+        </div>
+
+        <div class="project-body">
+          <!-- Stats grid -->
+          <div class="project-stats-grid">
+            <div class="ps-item">
+              <span class="ps-lbl">Duration</span>
+              <span class="ps-val">2021–2026</span>
+            </div>
+            <div class="ps-item">
+              <span class="ps-lbl">Type</span>
+              <span class="ps-val">Preregistered Direct Replication</span>
+            </div>
+          </div>
+
+          <!-- Project scope -->
+          <div class="rq-section">
+            <h4>Project Overview</h4>
+            <p>This initiative systematically replicates 10 seminal studies on online privacy and self-disclosure, organized in five thematic batches. The first batch, covering privacy calculus, context collapse, and the privacy paradox (Krasnova 2010, Vitak 2012, Dienlin & Trepte 2015), was published in the <em>Journal of Communication</em>. Subsequent batches will examine privacy cynicism, privacy fatigue, privacy literacy, and other key phenomena across diverse social media contexts.</p>
+          </div>
+
+          <!-- Batch 1 findings -->
+          <div class="rq-section">
+            <h4>Batch 1: Privacy Calculus, Paradox & Context Collapse</h4>
+            <p><strong>Published: Journal of Communication (June 2025)</strong></p>
+            <p>The first three studies revealed a critical shift in privacy behavior: <strong>the concern–disclosure link has reversed</strong>. In the original 2010–2015 studies, higher privacy concerns predicted less disclosure. In our 2025 replication, higher concerns predicted more disclosure. This reversal suggests a fundamental change in how social media users respond to privacy risks — shifting from protective behavior to resigned disclosure despite concerns.</p>
+          </div>
+
+          <!-- Batch 2 findings -->
+          <div class="rq-section">
+            <h4>Batch 2: Privacy Fatigue & Cynicism</h4>
+            <p><strong>Forthcoming: Edward Elgar volume on privacy cynicism (2026)</strong></p>
+            <p>This batch replicated two foundational studies on privacy fatigue (Choi et al., 2018) and privacy cynicism (Lutz et al., 2020). Privacy fatigue effects replicate robustly across cultures, predicting both disengagement and disclosure. However, cynicism's protective role is more complex: while cynicism predicted disengagement in the originals, it did not reduce protective behaviors, suggesting resignation and withdrawal operate separately from active privacy protection. The evidence supports a refined three-pathway taxonomy — depletion (exhaustion), defeat (learned futility), and vigilance (threat-driven protection) — that can coexist in the same person. Overall, 80% of original paths replicated with near-identical magnitudes (r = .90 across effects).</p>
+          </div>
+
+          <div class="project-grid-two">
+            <!-- Research Questions -->
+            <div class="rq-section">
+              <h4>Research Questions</h4>
+              <ul class="rq-list">
+                <li>Do the core findings of 10 landmark studies in privacy research replicate when conducted in contemporary samples?</li>
+                <li>Do effects hold when we add theoretically motivated paths and extensions to the original models?</li>
+                <li>How sensitive are key relationships to analytical choices and measurement variations?</li>
+              </ul>
+            </div>
+
+            <!-- Timeline -->
+            <div class="timeline-section">
+              <h4>Project Timeline</h4>
+              <div class="timeline">
+                <div class="timeline-item milestone">
+                  <div class="tl-dot"></div>
+                  <span class="tl-date">2021</span>
+                  <p class="tl-event">Idea and study design</p>
+                </div>
+                <div class="timeline-item">
+                  <div class="tl-dot"></div>
+                  <span class="tl-date">2022</span>
+                  <p class="tl-event">Batch 1 data collection (Krasnova, Vitak, Dienlin &amp; Trepte)</p>
+                </div>
+                <div class="timeline-item">
+                  <div class="tl-dot"></div>
+                  <span class="tl-date">2023</span>
+                  <p class="tl-event">Batch 2 data collection (Choi, Lutz)</p>
+                </div>
+                <div class="timeline-item">
+                  <div class="tl-dot"></div>
+                  <span class="tl-date">2024</span>
+                  <p class="tl-event">Batch 3 data collection</p>
+                </div>
+                <div class="timeline-item">
+                  <div class="tl-dot"></div>
+                  <span class="tl-date">2025</span>
+                  <p class="tl-event">Batch 4 data collection &amp; Batch 1 published (JOC)</p>
+                </div>
+                <div class="timeline-item milestone">
+                  <div class="tl-dot"></div>
+                  <span class="tl-date">2026</span>
+                  <p class="tl-event">Batch 2 published (Edward Elgar chapter)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team -->
+          <div class="project-team-line">
+            <strong>Lead Investigator&nbsp;&nbsp;</strong>
+            Philipp K. Masur (VU Amsterdam)
+          </div>
+
+          <!-- Links -->
+          <div style="margin-top:var(--sp-md); display:flex; gap:var(--sp-sm); flex-wrap:wrap;">
+            <a href="https://doi.org/10.1093/joc/jqaf007" class="btn btn-outline" aria-label="Read Batch 1 on Journal of Communication">Batch 1: JOC Paper ↗</a>
+            <a href="https://osf.io/gnb2t/" class="btn btn-outline" aria-label="Open Science Framework">Batch 1: OSF ↗</a>
+            <a href="https://osf.io/bdsjz/" class="btn btn-outline" aria-label="Batch 2 OSF">Batch 2: OSF ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── PROJECT 3 ── -->
+      <article class="project-card" aria-labelledby="proj3-title">
+        <div class="project-card-head">
+          <div>
+            <span class="badge" style="background-color:#6366f1; color:white;">Published — 2024</span>
+            <h3 id="proj3-title">Direct Replication in Experimental<br>Communication Science: A Taxonomy</h3>
+            <p class="project-target">A conceptual framework for classifying and justifying replication studies in communication research by replicator motivation rather than methodological similarity.</p>
+          </div>
+        </div>
+
+        <div class="project-body">
+          <p>This methodological paper develops a taxonomy of replication types organized by replicator motivation — verification, study generalizability, theory generalizability, and extension. The core argument: direct replications in communication science <em>require</em> deviations from originals (updated stimuli, platforms, timeframes) to remain scientifically meaningful. The paper walks through seven study elements (sample, setting, procedure, design, measures, stimuli, analyses) and articulates rules for when deviations are updates (necessary for verification) versus deliberate deviations (associated with generalizability tests).</p>
+
+          <div style="margin-top: var(--sp-md);">
+            <div class="project-stats-grid">
+              <div class="ps-item">
+                <span class="ps-lbl">Duration</span>
+                <span class="ps-val">2024</span>
+              </div>
+              <div class="ps-item">
+                <span class="ps-lbl">Type</span>
+                <span class="ps-val">Conceptual Framework / Published Paper</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Team -->
+          <div class="project-team-line">
+            <strong>Authors&nbsp;&nbsp;</strong>
+            Ivar E. Vermeulen (VU Amsterdam) · Philipp K. Masur (VU Amsterdam) · Camiel J. Beukeboom (VU Amsterdam) · Benjamin K. Johnson (University of Florida)
+          </div>
+
+          <!-- Links -->
+          <div style="margin-top:var(--sp-md); display:flex; gap:var(--sp-sm); flex-wrap:wrap;">
+            <a href="https://doi.org/10.17645/mac.7971" class="btn btn-outline" aria-label="Read the paper">Read the Paper ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── MORE COMING SOON ── -->
+      <div class="more-soon-card" aria-label="More projects coming soon">
+        <h3>More projects coming soon</h3>
+        <p>GCRI is developing its pipeline of future replication studies. We welcome community nominations for studies that would benefit from large-scale, multilab replication.</p>
+        <a href="contact.html" class="btn btn-outline">Propose a Replication Project →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── JOIN BAND ── -->
+  <section class="alt" style="padding:var(--sp-xl) 0;">
+    <div class="container text-center">
+      <span class="sec-label">Get Involved</span>
+      <h2 style="margin-bottom:0.75rem;">Participate as a Data Collection Lab</h2>
+      <p style="max-width:580px;margin:0 auto var(--sp-lg);">GCRI recruits labs across countries for each project. If you lead a lab in communication science or a related field, membership is the pipeline into consortium invitations.</p>
+      <a href="become-a-member.html" class="btn btn-primary">Become a Member</a>
+    </div>
+  </section>
+</main>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="footer-brand-logo" aria-label="GCRI Home">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <line x1="18" y1="5" x2="6"  y2="18" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+            <line x1="18" y1="5" x2="30" y2="18" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+            <line x1="6"  y1="18" x2="30" y2="18" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+            <line x1="6"  y1="18" x2="18" y2="31" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+            <line x1="30" y1="18" x2="18" y2="31" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+            <circle cx="6"  cy="18" r="3.5" fill="rgba(255,255,255,0.85)"/>
+            <circle cx="30" cy="18" r="3.5" fill="rgba(255,255,255,0.85)"/>
+            <circle cx="18" cy="31" r="3.5" fill="rgba(255,255,255,0.85)"/>
+            <circle cx="18" cy="5"  r="3.5" fill="#c8970e"/>
+          </svg>
+          <span class="logo-text-wrap">
+            <span class="logo-acronym">GCRI</span>
+            <span class="logo-full">Global Communication Reproducibility Initiative</span>
+          </span>
+        </a>
+        <p class="footer-tagline">Advancing Communication Science Through Systematic Replication</p>
+        <a href="#" class="footer-osf">Open Science Framework ↗</a>
+      </div>
+      <nav class="footer-nav-col" aria-label="Footer navigation">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="members.html">Members</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="become-a-member.html">Become a Member</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav-col" aria-label="Partner links">
+        <h4>Partners</h4>
+        <ul>
+          <li><a href="#">Radboud University</a></li>
+          <li><a href="#">VU Amsterdam</a></li>
+          <li><a href="#">NWO</a></li>
+          <li><a href="#">OSF</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div style="margin-bottom: var(--sp-md); padding-bottom: var(--sp-md); border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: var(--sp-sm);">This project is funded by:</p>
+        <a href="https://www.nwo.nl" target="_blank" rel="noopener" aria-label="Netherlands Organisation for Scientific Research">
+          <img src="https://www.nwo.nl/sites/nwo/files/styles/max_900x900/public/media-images/NWO%20logo%20-%20RGB_wit_rondom_0.jpg?itok=y2B7y9ZM" alt="NWO logo" style="height: 80px; width: auto;">
+        </a>
+      </div>
+      <span>© 2026 The Global Communication Reproducibility Initiative</span>
+      <span>Open Science · Rigorous Methods · Collaborative Research</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

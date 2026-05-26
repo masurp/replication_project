@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — GCRI</title>
+  <meta name="description" content="Get in touch with the Global Communication Reproducibility Initiative. Questions, lab participation interest, media inquiries, and project proposals welcome.">
+  <meta property="og:title" content="Contact — GCRI">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-info-block {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-lg);
+    }
+    .contact-info-item {
+      padding-bottom: var(--sp-md);
+      border-bottom: 1px solid var(--c-border);
+    }
+    .contact-info-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .contact-info-item .label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-muted);
+      display: block;
+      margin-bottom: 0.375rem;
+    }
+    .contact-info-item p {
+      font-size: 0.9rem;
+      color: var(--c-mid);
+      line-height: 1.6;
+    }
+    .contact-info-item a {
+      color: var(--c-p2);
+      transition: color 0.2s ease;
+    }
+    .contact-info-item a:hover { color: var(--c-primary); }
+    .contact-form-card {
+      background: var(--c-white);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-lg);
+      padding: var(--sp-xl);
+    }
+    .inquiry-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: var(--sp-md);
+    }
+    .inquiry-tab {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1.5px solid var(--c-border);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--c-mid);
+      cursor: pointer;
+      background: transparent;
+      transition: all 0.15s ease;
+    }
+    .inquiry-tab.active,
+    .inquiry-tab:hover {
+      background: var(--c-pale);
+      border-color: var(--c-p2);
+      color: var(--c-primary);
+    }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: var(--sp-xl) var(--sp-md);
+    }
+    .form-success h3 { margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     NAVIGATION
+     ══════════════════════════════════════════════ -->
+<nav id="nav" class="solid" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="GCRI — Home">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <line x1="18" y1="5" x2="6"  y2="18" stroke="#3d2f72" stroke-width="1.5" stroke-opacity="0.35"/>
+        <line x1="18" y1="5" x2="30" y2="18" stroke="#3d2f72" stroke-width="1.5" stroke-opacity="0.35"/>
+        <line x1="6"  y1="18" x2="30" y2="18" stroke="#3d2f72" stroke-width="1.5" stroke-opacity="0.35"/>
+        <line x1="6"  y1="18" x2="18" y2="31" stroke="#3d2f72" stroke-width="1.5" stroke-opacity="0.35"/>
+        <line x1="30" y1="18" x2="18" y2="31" stroke="#3d2f72" stroke-width="1.5" stroke-opacity="0.35"/>
+        <circle cx="6"  cy="18" r="3.5" fill="#3d2f72"/>
+        <circle cx="30" cy="18" r="3.5" fill="#3d2f72"/>
+        <circle cx="18" cy="31" r="3.5" fill="#3d2f72"/>
+        <circle cx="18" cy="5"  r="3.5" fill="#c8970e"/>
+      </svg>
+      <span class="logo-text-wrap">
+        <span class="logo-acronym">GCRI</span>
+        <span class="logo-full">Global Communication Reproducibility Initiative</span>
+      </span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html"           data-nav>Home</a></li>
+      <li><a href="members.html"         data-nav>Members</a></li>
+      <li><a href="projects.html"        data-nav>Projects</a></li>
+      <li><a href="contact.html"         data-nav>Contact</a></li>
+      <li><a href="become-a-member.html" class="nav-cta" data-nav>Join</a></li>
+    </ul>
+    <button id="nav-toggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div id="mobile-menu" role="navigation" aria-label="Mobile menu">
+  <ul>
+    <li><a href="index.html"           data-nav>Home</a></li>
+    <li><a href="members.html"         data-nav>Members</a></li>
+    <li><a href="projects.html"        data-nav>Projects</a></li>
+    <li><a href="become-a-member.html" data-nav>Become a Member</a></li>
+    <li><a href="contact.html"         data-nav>Contact</a></li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     PAGE HERO
+     ══════════════════════════════════════════════ -->
+<header class="page-hero" aria-labelledby="page-title">
+  <div class="container">
+    <div class="page-hero-text">
+      <span class="sec-label" style="color:rgba(255,255,255,0.6);">Get in Touch</span>
+      <h1 id="page-title">Contact</h1>
+      <p>Have a question about GCRI? Interested in participating as a lab? Want to discuss a potential replication project? Get in touch.</p>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════
+     CONTACT
+     ══════════════════════════════════════════════ -->
+<main>
+  <section aria-labelledby="contact-section-heading">
+    <div class="container">
+      <h2 id="contact-section-heading" class="sr-only">Contact GCRI</h2>
+      <div class="contact-grid">
+
+        <!-- LEFT: contact info -->
+        <aside aria-label="Contact information">
+          <div class="contact-info-block">
+
+            <div class="contact-info-item">
+              <span class="label">General Inquiries</span>
+              <p><a href="mailto:info@gcri.org">info@gcri.org</a><br>
+              <span style="font-size:0.8rem;color:var(--c-muted);">(address to be confirmed at launch)</span></p>
+            </div>
+
+            <div class="contact-info-item">
+              <span class="label">Radboud University</span>
+              <p>Behavioral Science Institute<br>
+              Nijmegen, Netherlands</p>
+            </div>
+
+            <div class="contact-info-item">
+              <span class="label">Vrije Universiteit Amsterdam</span>
+              <p>Department of Communication Science<br>
+              Amsterdam, Netherlands</p>
+            </div>
+
+            <div class="contact-info-item">
+              <span class="label">For Lab Participation</span>
+              <p>If you lead a lab and are interested in joining a future GCRI consortium, please use the contact form and select <em>Lab participation interest</em>. You can also <a href="become-a-member.html">become a member</a> to be notified when recruitment opens.</p>
+            </div>
+
+            <div class="contact-info-item">
+              <span class="label">For Media &amp; Press</span>
+              <p>For interview requests, background information, or embargoed findings, please select <em>Media / press</em> in the contact form. We aim to respond within two working days.</p>
+            </div>
+
+            <div class="contact-info-item">
+              <span class="label">Open Science Resources</span>
+              <p><a href="#">Open Science Framework (OSF) ↗</a></p>
+            </div>
+
+          </div>
+        </aside>
+
+        <!-- RIGHT: contact form -->
+        <div class="contact-form-card">
+
+          <!-- SUCCESS STATE -->
+          <div class="form-success" id="contact-success" aria-live="polite">
+            <div style="font-size:2.5rem;margin-bottom:var(--sp-sm);">✓</div>
+            <h3>Message received</h3>
+            <p style="font-size:0.9rem;color:var(--c-muted);max-width:360px;margin:0 auto;">Thank you for reaching out. We will get back to you as soon as possible.</p>
+          </div>
+
+          <!-- FORM -->
+          <form id="contact-form"
+                action="https://formspree.io/f/PLACEHOLDER_GCRI_CONTACT"
+                method="POST"
+                novalidate>
+            <div style="display:flex;flex-direction:column;gap:var(--sp-sm);">
+
+              <div>
+                <span class="form-section-label" style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-muted);display:block;margin-bottom:0.625rem;">Type of inquiry</span>
+                <div class="inquiry-tabs" role="group" aria-label="Inquiry type">
+                  <button type="button" class="inquiry-tab active" data-value="General inquiry">General inquiry</button>
+                  <button type="button" class="inquiry-tab"        data-value="Lab participation interest">Lab participation</button>
+                  <button type="button" class="inquiry-tab"        data-value="Media / press">Media / press</button>
+                  <button type="button" class="inquiry-tab"        data-value="Propose a replication project">Propose a project</button>
+                  <button type="button" class="inquiry-tab"        data-value="Other">Other</button>
+                </div>
+                <input type="hidden" id="inquiry-type" name="inquiry_type" value="General inquiry">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-name">Name <span class="req">*</span></label>
+                <input type="text" id="contact-name" name="name" required autocomplete="name" placeholder="Your full name">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">Email <span class="req">*</span></label>
+                <input type="email" id="contact-email" name="email" required autocomplete="email" placeholder="your@email.com">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Message <span class="req">*</span></label>
+                <textarea id="contact-message" name="message" required rows="6" placeholder="Please describe your inquiry in as much detail as is useful…"></textarea>
+              </div>
+
+              <div id="contact-error" style="display:none;padding:10px 14px;background:#fff3f3;border:1px solid #f5c0c0;border-radius:var(--r-sm);font-size:0.84rem;color:#8a1a1a;" role="alert"></div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+                Send Message
+              </button>
+
+              <p style="font-size:0.75rem;color:var(--c-muted);text-align:center;line-height:1.5;">
+                We typically respond within three to five working days.
+              </p>
+
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="footer-brand-logo" aria-label="GCRI Home">
+          <svg width="32" height="32" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <line x1="18" y1="5" x2="6"  y2="18" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+            <line x1="18" y1="5" x2="30" y2="18" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+            <line x1="6"  y1="18" x2="30" y2="18" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+            <line x1="6"  y1="18" x2="18" y2="31" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+            <line x1="30" y1="18" x2="18" y2="31" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+            <circle cx="6"  cy="18" r="3.5" fill="rgba(255,255,255,0.85)"/>
+            <circle cx="30" cy="18" r="3.5" fill="rgba(255,255,255,0.85)"/>
+            <circle cx="18" cy="31" r="3.5" fill="rgba(255,255,255,0.85)"/>
+            <circle cx="18" cy="5"  r="3.5" fill="#c8970e"/>
+          </svg>
+          <span class="logo-text-wrap">
+            <span class="logo-acronym">GCRI</span>
+            <span class="logo-full">Global Communication Reproducibility Initiative</span>
+          </span>
+        </a>
+        <p class="footer-tagline">Advancing Communication Science Through Systematic Replication</p>
+        <a href="#" class="footer-osf">Open Science Framework ↗</a>
+      </div>
+      <nav class="footer-nav-col" aria-label="Footer navigation">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="members.html">Members</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="become-a-member.html">Become a Member</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-nav-col" aria-label="Partner links">
+        <h4>Partners</h4>
+        <ul>
+          <li><a href="#">Radboud University</a></li>
+          <li><a href="#">VU Amsterdam</a></li>
+          <li><a href="#">NWO</a></li>
+          <li><a href="#">OSF</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <div style="margin-bottom: var(--sp-md); padding-bottom: var(--sp-md); border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: var(--sp-sm);">This project is funded by:</p>
+        <a href="https://www.nwo.nl" target="_blank" rel="noopener" aria-label="Netherlands Organisation for Scientific Research">
+          <img src="https://www.nwo.nl/sites/nwo/files/styles/max_900x900/public/media-images/NWO%20logo%20-%20RGB_wit_rondom_0.jpg?itok=y2B7y9ZM" alt="NWO logo" style="height: 80px; width: auto;">
+        </a>
+      </div>
+      <span>© 2026 The Global Communication Reproducibility Initiative</span>
+      <span>Open Science · Rigorous Methods · Collaborative Research</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+/* Contact form: inquiry type tabs + Formspree submit */
+(function() {
+  /* Inquiry type tabs */
+  const tabs     = document.querySelectorAll('.inquiry-tab');
+  const typeInput = document.getElementById('inquiry-type');
+
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      tabs.forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      if (typeInput) typeInput.value = tab.dataset.value;
+    });
+  });
+
+  /* Form submission */
+  const form    = document.getElementById('contact-form');
+  const success = document.getElementById('contact-success');
+  const errBox  = document.getElementById('contact-error');
+  if (!form) return;
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    errBox.style.display = 'none';
+
+    const name    = document.getElementById('contact-name');
+    const email   = document.getElementById('contact-email');
+    const message = document.getElementById('contact-message');
+    let valid = true;
+
+    [name, email, message].forEach(function(el) {
+      if (!el.value.trim()) {
+        el.style.borderColor = '#e05050';
+        valid = false;
+      } else {
+        el.style.borderColor = '';
+      }
+    });
+
+    if (!valid) {
+      errBox.textContent = 'Please fill in all required fields.';
+      errBox.style.display = 'block';
+      return;
+    }
+
+    const btn = form.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const data = new FormData(form);
+      const res  = await fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+      if (res.ok) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        throw new Error('Server error');
+      }
+    } catch(err) {
+      errBox.textContent = 'Something went wrong. Please try again or email us directly.';
+      errBox.style.display = 'block';
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+    }
+  });
+})();
+</script>
+</body>
+</html>
