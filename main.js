@@ -1,4 +1,4 @@
-/* main.js — GCRI navigation & shared interactivity */
+/* main.js — GIRCS navigation & shared interactivity */
 
 /* ── Password protection ─────────────────── */
 if (!sessionStorage.getItem('gcri-authenticated')) {

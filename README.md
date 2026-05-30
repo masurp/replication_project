@@ -1,10 +1,10 @@
-# GCRI — Global Communication Reproducibility Initiative
+# GIRCS — Global Initiative for Replication in Communication Science
 
-A static website for the Global Communication Reproducibility Initiative, showcasing our multilab replication studies in communication science.
+A static website for the Global Initiative for Replication in Communication Science, showcasing our multilab replication studies in communication science.
 
 ## Overview
 
-GCRI coordinates large-scale, preregistered replication studies targeting landmark findings in communication research. This website serves as the hub for our projects, member information, and collaborative network.
+GIRCS coordinates large-scale, preregistered replication studies targeting landmark findings in communication research. This website serves as the hub for our projects, member information, and collaborative network.
 
 ## Features
 
@@ -21,7 +21,7 @@ GCRI coordinates large-scale, preregistered replication studies targeting landma
 - **Members** (`members.html`) — Founding members and community collaborators
 - **Projects** (`projects.html`) — Active and completed replication studies
 - **Contact** (`contact.html`) — Get in touch and collaboration opportunities
-- **Join** (`become-a-member.html`) — Information about joining GCRI
+- **Join** (`become-a-member.html`) — Information about joining GIRCS
 
 ## Architecture
 
@@ -74,4 +74,4 @@ The site uses a centralized design system based on CSS custom properties:
 
 ## License
 
-© 2026 The Global Communication Reproducibility Initiative
+© 2026 The Global Initiative for Replication in Communication Science
