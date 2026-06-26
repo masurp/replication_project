@@ -23,7 +23,7 @@ if (!sessionStorage.getItem('gcri-authenticated')) {
   function syncNav() {
     if (!nav) return;
     if (!hero) { nav.classList.remove('transparent'); nav.classList.add('solid'); return; }
-    const past = hero.getBoundingClientRect().bottom <= 0;
+    const past = window.scrollY > 80;
     nav.classList.toggle('solid',       past);
     nav.classList.toggle('transparent', !past);
   }
