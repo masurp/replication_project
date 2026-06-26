@@ -130,7 +130,7 @@
     <div class="page-hero-text">
       <span class="sec-label" style="color:rgba(255,255,255,0.6);">Get in Touch</span>
       <h1 id="page-title">Contact</h1>
-      <p>Have a question about REP-COM? Interested in participating as a lab? Want to discuss a potential replication project? Get in touch.</p>
+      <p>Have a question about REP-COM? Want to discuss a potential replication project or submit a completed one? Get in touch.</p>
     </div>
   </div>
 </header>
@@ -150,8 +150,7 @@
 
             <div class="contact-info-item">
               <span class="label">General Inquiries</span>
-              <p><a href="mailto:info@gcri.org">info@gcri.org</a><br>
-              <span style="font-size:0.8rem;color:var(--c-muted);">(address to be confirmed at launch)</span></p>
+              <p>Please use the contact form to get in touch with us.</p>
             </div>
 
             <div class="contact-info-item">
@@ -167,18 +166,13 @@
             </div>
 
             <div class="contact-info-item">
-              <span class="label">For Lab Participation</span>
-              <p>If you lead a lab and are interested in joining a future REP-COM consortium, please use the contact form and select <em>Lab participation interest</em>. You can also <a href="become-a-member.html">become a member</a> to be notified when recruitment opens.</p>
-            </div>
-
-            <div class="contact-info-item">
               <span class="label">For Media &amp; Press</span>
               <p>For interview requests, background information, or embargoed findings, please select <em>Media / press</em> in the contact form. We aim to respond within two working days.</p>
             </div>
 
             <div class="contact-info-item">
               <span class="label">Open Science Resources</span>
-              <p><a href="#">Open Science Framework (OSF) ↗</a></p>
+              <p><a href="https://osf.io/yzacf/overview" target="_blank" rel="noopener">Open Science Framework (OSF) ↗</a></p>
             </div>
 
           </div>
@@ -196,16 +190,16 @@
 
           <!-- FORM -->
           <form id="contact-form"
-                action="https://formspree.io/f/PLACEHOLDER_REP-COM_CONTACT"
+                action="https://formspree.io/f/mpqgdwaq"
                 method="POST"
                 novalidate>
+            <input type="hidden" name="_subject" id="contact-subject" value="REP-COM Contact: General inquiry">
             <div style="display:flex;flex-direction:column;gap:var(--sp-sm);">
 
               <div>
                 <span class="form-section-label" style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--c-muted);display:block;margin-bottom:0.625rem;">Type of inquiry</span>
                 <div class="inquiry-tabs" role="group" aria-label="Inquiry type">
                   <button type="button" class="inquiry-tab active" data-value="General inquiry">General inquiry</button>
-                  <button type="button" class="inquiry-tab"        data-value="Lab participation interest">Lab participation</button>
                   <button type="button" class="inquiry-tab"        data-value="Media / press">Media / press</button>
                   <button type="button" class="inquiry-tab"        data-value="Propose a replication project">Propose a project</button>
                   <button type="button" class="inquiry-tab"        data-value="Other">Other</button>
@@ -312,14 +306,16 @@
 /* Contact form: inquiry type tabs + Formspree submit */
 (function() {
   /* Inquiry type tabs */
-  const tabs     = document.querySelectorAll('.inquiry-tab');
-  const typeInput = document.getElementById('inquiry-type');
+  const tabs        = document.querySelectorAll('.inquiry-tab');
+  const typeInput   = document.getElementById('inquiry-type');
+  const subjectInput = document.getElementById('contact-subject');
 
   tabs.forEach(function(tab) {
     tab.addEventListener('click', function() {
       tabs.forEach(function(t) { t.classList.remove('active'); });
       tab.classList.add('active');
       if (typeInput) typeInput.value = tab.dataset.value;
+      if (subjectInput) subjectInput.value = 'REP-COM Contact: ' + tab.dataset.value;
     });
   });
 

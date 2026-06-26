@@ -225,9 +225,10 @@
 
           <!-- FORM -->
           <form id="join-form"
-                action="https://formspree.io/f/PLACEHOLDER_REP-COM_JOIN"
+                action="https://formspree.io/f/mykqwyrq"
                 method="POST"
                 novalidate>
+            <input type="hidden" name="_subject" value="REP-COM: New Community Sign-Up">
 
             <div style="display:flex;flex-direction:column;gap:var(--sp-sm);">
 
@@ -290,6 +291,11 @@
                 <input type="checkbox" name="updates_consent" value="yes">
                 <span>I agree to receive occasional REP-COM updates <em style="color:var(--c-muted);">(no spam — max ~4 emails / year)</em></span>
               </label>
+
+              <div class="form-group">
+                <label for="join-message">Message <em style="color:var(--c-muted);font-style:normal;font-size:0.8rem;">(optional)</em></label>
+                <textarea id="join-message" name="message" rows="4" placeholder="Anything you'd like us to know…"></textarea>
+              </div>
 
               <div id="join-error" style="display:none;padding:10px 14px;background:#fff3f3;border:1px solid #f5c0c0;border-radius:var(--r-sm);font-size:0.84rem;color:#8a1a1a;" role="alert"></div>
 
