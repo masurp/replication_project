@@ -175,6 +175,11 @@ section.alt { background: var(--c-bg-alt); }
   white-space: nowrap;
 }
 
+.logo-full .logo-highlight {
+  color: var(--c-primary);
+  font-weight: 700;
+}
+
 /* Nav links */
 .nav-links {
   display: flex;
@@ -791,6 +796,31 @@ section.alt { background: var(--c-bg-alt); }
   line-height: 1.65;
 }
 
+.member-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--sp-sm);
+}
+
+.member-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--c-primary);
+  text-decoration: none;
+  border: 1px solid var(--c-border);
+  border-radius: 999px;
+  padding: 3px 10px;
+  transition: background var(--t), border-color var(--t);
+}
+
+.member-link:hover {
+  background: var(--c-pale);
+  border-color: var(--c-primary);
+}
+
 /* 5th card: center in a 2-col grid */
 .member-grid .member-card:nth-child(5) {
   grid-column: 1 / -1;
@@ -1096,6 +1126,7 @@ section.alt { background: var(--c-bg-alt); }
 
 .footer-brand-logo .logo-acronym { color: var(--c-white); }
 .footer-brand-logo .logo-full    { color: rgba(255,255,255,0.4); }
+.footer-brand-logo .logo-full .logo-highlight { color: rgba(255,255,255,0.9); }
 
 .footer-tagline {
   font-size: 0.875rem;
