@@ -59,6 +59,93 @@
     @media (max-width: 700px) {
       .project-grid-two { grid-template-columns: 1fr; }
     }
+    .project-filter-bar {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-sm);
+      flex-wrap: wrap;
+      margin-bottom: var(--sp-xl);
+    }
+    .project-search {
+      flex: 1 1 200px;
+      min-width: 160px;
+    }
+    .project-search input {
+      width: 100%;
+      padding: 0.4rem 0.75rem;
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-md);
+      font-size: 0.85rem;
+      font-family: inherit;
+      color: var(--c-text);
+      background: #fff;
+      transition: border-color var(--t-fast);
+    }
+    .project-search input:focus {
+      outline: none;
+      border-color: var(--c-primary);
+    }
+    .project-status-toggle {
+      display: inline-flex;
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-md);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .status-toggle-btn {
+      border: none;
+      background: #fff;
+      color: var(--c-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.4rem 0.75rem;
+      cursor: pointer;
+      transition: background var(--t-fast), color var(--t-fast);
+    }
+    .status-toggle-btn + .status-toggle-btn {
+      border-left: 1px solid var(--c-border);
+    }
+    .status-toggle-btn:hover {
+      background: var(--c-pale);
+    }
+    .status-toggle-btn.is-active {
+      background: var(--c-primary);
+      color: #fff;
+    }
+    .project-type-select {
+      flex-shrink: 0;
+      padding: 0.4rem 2rem 0.4rem 0.75rem;
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-md);
+      font-size: 0.78rem;
+      font-weight: 600;
+      font-family: inherit;
+      color: var(--c-muted);
+      background-color: #fff;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b6082' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.7rem center;
+      cursor: pointer;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      transition: border-color var(--t-fast);
+    }
+    .project-type-select:focus {
+      outline: none;
+      border-color: var(--c-primary);
+    }
+    .project-filter-empty {
+      text-align: center;
+      color: var(--c-muted);
+      padding: var(--sp-xl) 0;
+    }
+    @media (max-width: 560px) {
+      .project-search { flex-basis: 100%; }
+      .project-status-toggle { flex: 1; }
+      .status-toggle-btn { flex: 1; }
+      .project-type-select { flex: 1; }
+    }
   </style>
 </head>
 <body>
@@ -129,11 +216,32 @@
     <div class="container">
       <h2 id="projects-list-heading" class="sr-only">All Projects</h2>
 
+      <!-- ── SEARCH & FILTER ── -->
+      <div class="project-filter-bar">
+        <div class="project-search">
+          <label for="project-search-input" class="sr-only">Search projects by title or description</label>
+          <input type="search" id="project-search-input" placeholder="Search projects by title or keyword…">
+        </div>
+        <div class="project-status-toggle" role="group" aria-label="Filter projects by status">
+          <button type="button" class="status-toggle-btn is-active" data-status-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="status-toggle-btn" data-status-filter="active" aria-pressed="false">Active</button>
+          <button type="button" class="status-toggle-btn" data-status-filter="completed" aria-pressed="false">Completed</button>
+        </div>
+        <label for="project-type-select" class="sr-only">Filter projects by type</label>
+        <select id="project-type-select" class="project-type-select">
+          <option value="all">All types</option>
+          <option value="multilab">Multilab Replication</option>
+          <option value="direct">Direct Replication</option>
+          <option value="theoretical">Theoretical Paper</option>
+        </select>
+      </div>
+      <p id="project-filter-empty" class="project-filter-empty" hidden>No projects match your search.</p>
+
       <!-- ── PROJECT 1 ── -->
-      <article class="project-card" aria-labelledby="proj1-title">
+      <article class="project-card" aria-labelledby="proj1-title" data-status="active" data-type="multilab">
         <div class="project-card-head">
           <div>
-            <span class="badge badge-active">Active — Launched in June 2026</span>
+            <span class="badge badge-active">Active</span>
             <h3 id="proj1-title">The Robustness of Fear Appeals:<br>A Multilab Registered Replication Study</h3>
             <p class="project-target">Replicating: Witte, K. (1994). Fear control and danger control: A test of the extended parallel process model (EPPM). <em>Communication Monographs, 61</em>, 113–134.</p>
             <div class="project-stats-grid" style="margin-top: var(--sp-sm);">
@@ -143,7 +251,7 @@
               </div>
               <div class="ps-item">
                 <span class="ps-lbl">Type</span>
-                <span class="ps-val">Multilab Registered Replication</span>
+                <span class="ps-val">Multilab Replication</span>
               </div>
             </div>
           </div>
@@ -226,10 +334,10 @@
       </article>
 
       <!-- ── PROJECT 2 ── -->
-      <article class="project-card" aria-labelledby="proj2-title">
+      <article class="project-card" aria-labelledby="proj2-title" data-status="active" data-type="direct">
         <div class="project-card-head">
           <div>
-            <span class="badge" style="background-color:#4CAF50; color:white;">Active — Batch 1 & 2 Published</span>
+            <span class="badge badge-active">Active / Partly Completed</span>
             <h3 id="proj2-title">Online Privacy and Self-Disclosure:<br>A Direct Replication Program</h3>
             <p class="project-target">Direct replication of 10 landmark studies across five thematic batches on privacy concerns, self-disclosure behavior, and privacy protection strategies on social media platforms.</p>
             <div class="project-stats-grid" style="margin-top: var(--sp-sm);">
@@ -239,7 +347,7 @@
               </div>
               <div class="ps-item">
                 <span class="ps-lbl">Type</span>
-                <span class="ps-val">Preregistered Direct Replications</span>
+                <span class="ps-val">Direct Replication</span>
               </div>
             </div>
           </div>
@@ -249,7 +357,7 @@
           <!-- Project scope -->
           <div class="rq-section">
             <h4>Project Overview</h4>
-            <p>This initiative systematically replicates 10 seminal studies on online privacy and self-disclosure, organized in five thematic batches. The first batch, covering privacy calculus, context collapse, and the privacy paradox (Krasnova 2010, Vitak 2012, Dienlin & Trepte 2015), was published in the <em>Journal of Communication</em>. Subsequent batches will examine privacy cynicism, privacy fatigue, privacy literacy, and other key phenomena across diverse social media contexts.</p>
+            <p>This initiative systematically replicates 10 seminal studies on online privacy and self-disclosure, organized in five preregistered thematic batches. The first batch, covering privacy calculus, context collapse, and the privacy paradox (Krasnova 2010, Vitak 2012, Dienlin & Trepte 2015), was published in the <em>Journal of Communication</em>. Subsequent batches will examine privacy cynicism, privacy fatigue, privacy literacy, and other key phenomena across diverse social media contexts.</p>
             <p><a href="https://philippmasur.de/2026/06/24/why-replication-matters-insights-from-replicating-10-online-privacy-studies/" target="_blank" rel="noopener">Read the blog post: Why Replication Matters — Insights from Replicating 10 Online Privacy Studies &rarr;</a></p>
           </div>
 
@@ -342,10 +450,10 @@
       </article>
 
       <!-- ── PROJECT 3 ── -->
-      <article class="project-card" aria-labelledby="proj3-title">
+      <article class="project-card" aria-labelledby="proj3-title" data-status="completed" data-type="theoretical">
         <div class="project-card-head">
           <div>
-            <span class="badge" style="background-color:#6366f1; color:white;">Published — 2024</span>
+            <span class="badge badge-completed">Completed</span>
             <h3 id="proj3-title">Direct Replication in Experimental<br>Communication Science: A Taxonomy</h3>
             <p class="project-target">A conceptual framework for classifying and justifying replication studies in communication research by replicator motivation rather than methodological similarity.</p>
             <p><strong>Published: Media and Communication (2024)</strong></p>
@@ -356,7 +464,7 @@
               </div>
               <div class="ps-item">
                 <span class="ps-lbl">Type</span>
-                <span class="ps-val">Conceptual Framework for Replication</span>
+                <span class="ps-val">Theoretical Paper</span>
               </div>
             </div>
           </div>
@@ -463,5 +571,60 @@
 </footer>
 
 <script src="main.js"></script>
+<script>
+(function () {
+  var searchInput = document.getElementById('project-search-input');
+  var statusBtns = document.querySelectorAll('[data-status-filter]');
+  var typeSelect = document.getElementById('project-type-select');
+  var emptyMsg = document.getElementById('project-filter-empty');
+  var cards = document.querySelectorAll('.project-card[data-status]');
+  var activeStatus = 'all';
+  var activeType = 'all';
+
+  function cardText(card) {
+    var title = card.querySelector('h3');
+    var desc = card.querySelector('.project-target');
+    return ((title ? title.textContent : '') + ' ' + (desc ? desc.textContent : '')).toLowerCase();
+  }
+
+  function applyFilters() {
+    var query = searchInput.value.trim().toLowerCase();
+    var visibleCount = 0;
+
+    cards.forEach(function (card) {
+      var matchesStatus = activeStatus === 'all' || card.getAttribute('data-status') === activeStatus;
+      var matchesType = activeType === 'all' || card.getAttribute('data-type') === activeType;
+      var matchesQuery = query === '' || cardText(card).indexOf(query) !== -1;
+      var isVisible = matchesStatus && matchesType && matchesQuery;
+      card.hidden = !isVisible;
+      if (isVisible) visibleCount++;
+    });
+
+    emptyMsg.hidden = visibleCount !== 0;
+  }
+
+  function wireToggleGroup(btns, onSelect) {
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        btns.forEach(function (b) {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-pressed', 'true');
+        onSelect(btn);
+        applyFilters();
+      });
+    });
+  }
+
+  searchInput.addEventListener('input', applyFilters);
+  wireToggleGroup(statusBtns, function (btn) { activeStatus = btn.getAttribute('data-status-filter'); });
+  typeSelect.addEventListener('change', function () {
+    activeType = typeSelect.value;
+    applyFilters();
+  });
+})();
+</script>
 </body>
 </html>

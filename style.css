@@ -394,6 +394,12 @@ section.alt { background: var(--c-bg-alt); }
   border: 1px solid #f5d680;
 }
 
+.badge-completed {
+  background: #e8eaf6;
+  color: #3949ab;
+  border: 1px solid #c5cae9;
+}
+
 /* ═══════════════════════════════════════════════════
    10. FORMS
    ═══════════════════════════════════════════════════ */
