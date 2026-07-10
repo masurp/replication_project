@@ -202,6 +202,7 @@
                   <button type="button" class="inquiry-tab active" data-value="General inquiry">General inquiry</button>
                   <button type="button" class="inquiry-tab"        data-value="Media / press">Media / press</button>
                   <button type="button" class="inquiry-tab"        data-value="Propose a replication project">Propose a project</button>
+                  <button type="button" class="inquiry-tab"        data-value="Submit a completed or active replication">Submit a completed or active replication</button>
                   <button type="button" class="inquiry-tab"        data-value="Other">Other</button>
                 </div>
                 <input type="hidden" id="inquiry-type" name="inquiry_type" value="General inquiry">
@@ -217,8 +218,90 @@
                 <input type="email" id="contact-email" name="email" required autocomplete="email" placeholder="your@email.com">
               </div>
 
+              <!-- Proposal submission fields — shown only for that inquiry type -->
+              <div id="propose-fields" style="display:none;border:1px solid var(--c-border);border-radius:var(--r-md);padding:var(--sp-md);background:var(--c-bg-alt);">
+                <p style="font-size:0.82rem;color:var(--c-muted);margin-bottom:var(--sp-md);line-height:1.6;">Please provide as much detail as possible. Fields marked <span style="color:#c0392b;">*</span> are required; the rest are optional but help us assess your proposal.</p>
+
+                <div class="form-group">
+                  <label for="prop-title">Proposed Title <span class="req">*</span></label>
+                  <input type="text" id="prop-title" name="prop_title" placeholder="e.g. A Multilab Replication of Smith &amp; Jones (2015)">
+                </div>
+
+                <div class="form-group">
+                  <label for="prop-runtime">Proposed Runtime <span style="font-weight:400;color:var(--c-muted);">(optional)</span></label>
+                  <input type="text" id="prop-runtime" name="prop_runtime" placeholder="e.g. 24 months (2027–2029)">
+                </div>
+
+                <div class="form-group">
+                  <label for="prop-target">Which Study/Studies You Want to Replicate <span class="req">*</span></label>
+                  <textarea id="prop-target" name="prop_target" rows="3" placeholder="Full citation(s) of the target study or studies."></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="prop-description">Short Description <span class="req">*</span></label>
+                  <textarea id="prop-description" name="prop_description" rows="6" placeholder="Describe the proposed project in up to two paragraphs — why it matters and how you envision it being carried out."></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="prop-needs">What Are Your Needs? <span style="font-weight:400;color:var(--c-muted);">(optional)</span></label>
+                  <textarea id="prop-needs" name="prop_needs" rows="3" placeholder="e.g. I need collaborators, data collection labs, funding, methodological input…"></textarea>
+                </div>
+              </div>
+
+              <!-- Replication submission fields — shown only for that inquiry type -->
+              <div id="replication-fields" style="display:none;border:1px solid var(--c-border);border-radius:var(--r-md);padding:var(--sp-md);background:var(--c-bg-alt);">
+                <p style="font-size:0.82rem;color:var(--c-muted);margin-bottom:var(--sp-md);line-height:1.6;">Please provide as much detail as possible. Fields marked <span style="color:#c0392b;">*</span> are required; the rest are optional but help us feature your project accurately.</p>
+
+                <div class="form-group">
+                  <span style="font-size:0.82rem;font-weight:600;color:var(--c-text);display:block;margin-bottom:0.5rem;">Project Status <span class="req">*</span></span>
+                  <div style="display:flex;gap:var(--sp-lg);">
+                    <label style="display:flex;align-items:center;gap:6px;font-size:0.9rem;font-weight:400;cursor:pointer;">
+                      <input type="radio" name="rep_status" value="Active"> Active
+                    </label>
+                    <label style="display:flex;align-items:center;gap:6px;font-size:0.9rem;font-weight:400;cursor:pointer;">
+                      <input type="radio" name="rep_status" value="Completed"> Completed
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="rep-title">Project Title <span class="req">*</span></label>
+                  <input type="text" id="rep-title" name="rep_title" placeholder="e.g. A Direct Replication of Smith &amp; Jones (2015)">
+                </div>
+
+                <div class="form-group">
+                  <label for="rep-original">Original Study Replicated <span class="req">*</span></label>
+                  <textarea id="rep-original" name="rep_original" rows="3" placeholder="Full citation of the original study, e.g. Smith, J., &amp; Jones, A. (2015). Title. Journal, 10, 1–20."></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="rep-duration">Duration &amp; Type</label>
+                  <input type="text" id="rep-duration" name="rep_duration" placeholder="e.g. 2022–2024 · Preregistered Direct Replication">
+                </div>
+
+                <div class="form-group">
+                  <label for="rep-description">Short Project Description <span class="req">*</span></label>
+                  <textarea id="rep-description" name="rep_description" rows="6" placeholder="Describe the project in up to two paragraphs — background, what you did, and key findings."></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="rep-rqs">Main Research Questions <span style="font-weight:400;color:var(--c-muted);">(optional)</span></label>
+                  <textarea id="rep-rqs" name="rep_rqs" rows="3" placeholder="List your main research questions, one per line."></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="rep-timeline">Key Timeline Milestones <span style="font-weight:400;color:var(--c-muted);">(optional)</span></label>
+                  <textarea id="rep-timeline" name="rep_timeline" rows="3" placeholder="e.g. 2022: Data collection · 2023: Preprint posted · 2024: Published in Journal X"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="rep-links">Links to Publications, OSF, or Data <span style="font-weight:400;color:var(--c-muted);">(optional)</span></label>
+                  <textarea id="rep-links" name="rep_links" rows="3" placeholder="Paste DOIs, OSF links, GitHub URLs, or other relevant links — one per line."></textarea>
+                </div>
+              </div>
+
               <div class="form-group">
-                <label for="contact-message">Message <span class="req">*</span></label>
+                <label for="contact-message" id="message-label">Message <span class="req">*</span></label>
                 <textarea id="contact-message" name="message" required rows="6" placeholder="Please describe your inquiry in as much detail as is useful…"></textarea>
               </div>
 
@@ -305,19 +388,63 @@
 <script>
 /* Contact form: inquiry type tabs + Formspree submit */
 (function() {
-  /* Inquiry type tabs */
-  const tabs        = document.querySelectorAll('.inquiry-tab');
-  const typeInput   = document.getElementById('inquiry-type');
-  const subjectInput = document.getElementById('contact-subject');
+  const tabs          = document.querySelectorAll('.inquiry-tab');
+  const typeInput     = document.getElementById('inquiry-type');
+  const subjectInput  = document.getElementById('contact-subject');
+  const repFields     = document.getElementById('replication-fields');
+  const proposeFields = document.getElementById('propose-fields');
+  const msgLabel      = document.getElementById('message-label');
+  const msgArea       = document.getElementById('contact-message');
+
+  function isRepTab(value) {
+    return value === 'Submit a completed or active replication';
+  }
+  function isProposeTab(value) {
+    return value === 'Propose a replication project';
+  }
+
+  function activateTab(tab) {
+    tabs.forEach(function(t) { t.classList.remove('active'); });
+    tab.classList.add('active');
+    var val = tab.dataset.value;
+    if (typeInput)    typeInput.value    = val;
+    if (subjectInput) subjectInput.value = 'REP-COM Contact: ' + val;
+
+    if (repFields)     repFields.style.display     = isRepTab(val)     ? 'block' : 'none';
+    if (proposeFields) proposeFields.style.display = isProposeTab(val) ? 'block' : 'none';
+
+    var hasStructuredFields = isRepTab(val) || isProposeTab(val);
+
+    /* Relabel the message area for structured submissions */
+    if (msgLabel) {
+      msgLabel.innerHTML = hasStructuredFields
+        ? 'Additional Notes <span style="font-weight:400;color:var(--c-muted);">(optional)</span>'
+        : 'Message <span class="req">*</span>';
+    }
+    if (msgArea) {
+      msgArea.required    = !hasStructuredFields;
+      msgArea.placeholder = hasStructuredFields
+        ? 'Anything else you would like us to know…'
+        : 'Please describe your inquiry in as much detail as is useful…';
+    }
+  }
 
   tabs.forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      tabs.forEach(function(t) { t.classList.remove('active'); });
-      tab.classList.add('active');
-      if (typeInput) typeInput.value = tab.dataset.value;
-      if (subjectInput) subjectInput.value = 'REP-COM Contact: ' + tab.dataset.value;
-    });
+    tab.addEventListener('click', function() { activateTab(tab); });
   });
+
+  /* Auto-select from URL param: ?tab=replication or ?tab=propose */
+  var params = new URLSearchParams(window.location.search);
+  var tabParam = params.get('tab');
+  if (tabParam) {
+    var targetTab;
+    if (tabParam === 'replication') {
+      targetTab = Array.from(tabs).find(function(t) { return isRepTab(t.dataset.value); });
+    } else if (tabParam === 'propose') {
+      targetTab = Array.from(tabs).find(function(t) { return t.dataset.value === 'Propose a replication project'; });
+    }
+    if (targetTab) activateTab(targetTab);
+  }
 
   /* Form submission */
   const form    = document.getElementById('contact-form');
@@ -329,19 +456,52 @@
     e.preventDefault();
     errBox.style.display = 'none';
 
-    const name    = document.getElementById('contact-name');
-    const email   = document.getElementById('contact-email');
-    const message = document.getElementById('contact-message');
-    let valid = true;
+    const name  = document.getElementById('contact-name');
+    const email = document.getElementById('contact-email');
+    let valid   = true;
 
-    [name, email, message].forEach(function(el) {
-      if (!el.value.trim()) {
-        el.style.borderColor = '#e05050';
+    /* Always-required: name and email */
+    [name, email].forEach(function(el) {
+      if (!el.value.trim()) { el.style.borderColor = '#e05050'; valid = false; }
+      else                  { el.style.borderColor = ''; }
+    });
+
+    var currentType = typeInput ? typeInput.value : '';
+
+    if (isRepTab(currentType)) {
+      /* Replication-specific required fields */
+      var repTitle = document.getElementById('rep-title');
+      var repOrig  = document.getElementById('rep-original');
+      var repDesc  = document.getElementById('rep-description');
+      var statusChecked = form.querySelector('input[name="rep_status"]:checked');
+
+      [repTitle, repOrig, repDesc].forEach(function(el) {
+        if (!el.value.trim()) { el.style.borderColor = '#e05050'; valid = false; }
+        else                  { el.style.borderColor = ''; }
+      });
+
+      if (!statusChecked) {
+        form.querySelector('input[name="rep_status"]').closest('div').style.outline = '2px solid #e05050';
         valid = false;
       } else {
-        el.style.borderColor = '';
+        form.querySelector('input[name="rep_status"]').closest('div').style.outline = '';
       }
-    });
+    } else if (isProposeTab(currentType)) {
+      /* Proposal-specific required fields */
+      var propTitle  = document.getElementById('prop-title');
+      var propTarget = document.getElementById('prop-target');
+      var propDesc   = document.getElementById('prop-description');
+
+      [propTitle, propTarget, propDesc].forEach(function(el) {
+        if (!el.value.trim()) { el.style.borderColor = '#e05050'; valid = false; }
+        else                  { el.style.borderColor = ''; }
+      });
+    } else {
+      /* All other types: message required */
+      var message = document.getElementById('contact-message');
+      if (!message.value.trim()) { message.style.borderColor = '#e05050'; valid = false; }
+      else                       { message.style.borderColor = ''; }
+    }
 
     if (!valid) {
       errBox.textContent = 'Please fill in all required fields.';

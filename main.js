@@ -1,15 +1,5 @@
 /* main.js — GIRCS navigation & shared interactivity */
 
-/* ── Password protection ─────────────────── */
-if (!sessionStorage.getItem('gcri-authenticated')) {
-  const pwd = prompt('This site is under development. Enter password:');
-  if (pwd !== 'EPPM2026') {
-    alert('Incorrect password');
-    location.reload();
-  } else {
-    sessionStorage.setItem('gcri-authenticated', 'true');
-  }
-}
 
 (function () {
   'use strict';
