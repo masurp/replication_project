@@ -59,6 +59,60 @@
     @media (max-width: 700px) {
       .project-grid-two { grid-template-columns: 1fr; }
     }
+    /* Collapsible collaborator roster */
+    .collab-details {
+      margin-top: var(--sp-sm);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-md);
+      background: var(--c-bg-alt);
+    }
+    .collab-details > summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 0.6rem 0.9rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--c-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      user-select: none;
+    }
+    .collab-details > summary::-webkit-details-marker { display: none; }
+    .collab-details > summary .chev {
+      transition: transform var(--t-fast);
+      font-size: 0.7rem;
+      color: var(--c-muted);
+    }
+    .collab-details[open] > summary .chev { transform: rotate(90deg); }
+    .collab-details > summary .count-pill {
+      font-weight: 600;
+      color: var(--c-p2);
+      background: var(--c-pale);
+      border-radius: 999px;
+      padding: 0.1rem 0.55rem;
+      font-size: 0.72rem;
+    }
+    .collab-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 0.35rem 1rem;
+      padding: 0 0.9rem 0.9rem;
+    }
+    .cd-item {
+      font-size: 0.82rem;
+      color: var(--c-muted);
+      line-height: 1.35;
+    }
+    .cd-item strong {
+      color: var(--c-text);
+      font-weight: 600;
+    }
+    .cd-item strong::after {
+      content: " · ";
+      color: var(--c-muted);
+      font-weight: 400;
+    }
     .project-filter-bar {
       display: flex;
       align-items: center;
@@ -324,6 +378,59 @@
             <strong>Project Team&nbsp;&nbsp;</strong>
             Anita Eerland (PI, Radboud) · Lisa Vandeberg (Radboud) · Philipp K. Masur (VU Amsterdam) · Ivar Vermeulen (VU Amsterdam) · Marieke Fransen (Radboud)
           </div>
+          <details class="collab-details">
+            <summary><span class="chev">▶</span> Participating collaborators <span class="count-pill">48</span></summary>
+            <div class="collab-detail-grid">
+            <span class="cd-item"><strong>Monique Alblas</strong>University of Amsterdam</span>
+            <span class="cd-item"><strong>Francis Alpers</strong>Technische Universität Ilmenau</span>
+            <span class="cd-item"><strong>Mary E. Andrews</strong>Stony Brook University</span>
+            <span class="cd-item"><strong>Sara Atanasova</strong>University of Ljubljana</span>
+            <span class="cd-item"><strong>Bert Bakker</strong>University of Amsterdam</span>
+            <span class="cd-item"><strong>Jason Bantjes</strong>Stellenbosch University</span>
+            <span class="cd-item"><strong>Benjamin Bates</strong>Ohio University</span>
+            <span class="cd-item"><strong>Janine Blessing</strong>University of Zurich</span>
+            <span class="cd-item"><strong>Cristian Buzeta</strong>University of Chile</span>
+            <span class="cd-item"><strong>Spela Dolinsek</strong>University of Amsterdam</span>
+            <span class="cd-item"><strong>Ellen Droog</strong>Vrije Universiteit Amsterdam</span>
+            <span class="cd-item"><strong>Alina Duduciuc</strong>National University of Political Science and Public Administration</span>
+            <span class="cd-item"><strong>Anita Eerland</strong>Radboud University</span>
+            <span class="cd-item"><strong>Marieke Fransen</strong>Radboud University</span>
+            <span class="cd-item"><strong>Matthias R. Hastall</strong>TU Dortmund University</span>
+            <span class="cd-item"><strong>Greet Hendrickx</strong>Universiteit Antwerpen</span>
+            <span class="cd-item"><strong>Nancy Ho-A-Tham</strong>Anton de Kom Universiteit van Suriname</span>
+            <span class="cd-item"><strong>Carolin Ischen</strong>University of Amsterdam</span>
+            <span class="cd-item"><strong>Loes Janssen</strong>Tilburg University</span>
+            <span class="cd-item"><strong>Benjamin Johnson</strong>University of Florida</span>
+            <span class="cd-item"><strong>Sissy Karakitsou</strong>The American College of Greece</span>
+            <span class="cd-item"><strong>Kathrin Karsay</strong>University of Vienna</span>
+            <span class="cd-item"><strong>Celine Klemm</strong>Monash University</span>
+            <span class="cd-item"><strong>Ruobing Li</strong>Stony Brook University</span>
+            <span class="cd-item"><strong>Elena Link</strong>University of Mainz</span>
+            <span class="cd-item"><strong>Gijsje Maas</strong>Radboud University</span>
+            <span class="cd-item"><strong>Christina Makri</strong>The American College of Greece</span>
+            <span class="cd-item"><strong>Philipp Masur</strong>Vrije Universiteit Amsterdam</span>
+            <span class="cd-item"><strong>Athar Memon</strong>Ohio University</span>
+            <span class="cd-item"><strong>Matt Minich</strong>University of Vienna</span>
+            <span class="cd-item"><strong>Saar Mollen</strong>University of Amsterdam</span>
+            <span class="cd-item"><strong>Alexander Ort</strong>Universität Luzern</span>
+            <span class="cd-item"><strong>Diamantis Petropoulos-Petalas</strong>The American College of Greece</span>
+            <span class="cd-item"><strong>Karolien Poels</strong>Universiteit Antwerpen</span>
+            <span class="cd-item"><strong>Monique Pollmann</strong>Tilburg University</span>
+            <span class="cd-item"><strong>Steve Rains</strong>University of Arizona</span>
+            <span class="cd-item"><strong>Sebastian Scherr</strong>University of Augsburg</span>
+            <span class="cd-item"><strong>Ana Guilhermina Seixas Duarte Melo</strong>Universidade do Minho</span>
+            <span class="cd-item"><strong>Christopher Skurka</strong>Pennsylvania State University</span>
+            <span class="cd-item"><strong>Eline Smit</strong>University of Amsterdam</span>
+            <span class="cd-item"><strong>Freya Sukalla</strong>Universität Zürich</span>
+            <span class="cd-item"><strong>Bas van den Putte</strong>University of Amsterdam</span>
+            <span class="cd-item"><strong>Dian van Huijstee</strong>Vrije Universiteit Amsterdam</span>
+            <span class="cd-item"><strong>Guido van Koningsbruggen</strong>Vrije Universiteit Amsterdam</span>
+            <span class="cd-item"><strong>Aart van Stekelenburg</strong>Radboud University</span>
+            <span class="cd-item"><strong>Lisa Vandeberg</strong>Radboud University</span>
+            <span class="cd-item"><strong>Ivar Vermeulen</strong>Vrije Universiteit Amsterdam</span>
+            <span class="cd-item"><strong>Cas von Winckelman</strong>KU Leuven</span>
+            </div>
+          </details>
 
           <!-- Links -->
           <div style="margin-top:var(--sp-md); display:flex; gap:var(--sp-sm); flex-wrap:wrap;">

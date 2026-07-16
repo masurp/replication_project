@@ -8,6 +8,45 @@
   <meta property="og:title" content="Community — REP-COM">
   <meta property="og:type" content="website">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Collaborator directory — grouped by country */
+    .country-block { margin-bottom: var(--sp-xl); }
+    .country-block:last-child { margin-bottom: 0; }
+    .country-head {
+      display: flex;
+      align-items: baseline;
+      gap: var(--sp-sm);
+      padding-bottom: var(--sp-sm);
+      margin-bottom: var(--sp-md);
+      border-bottom: 2px solid var(--c-border);
+    }
+    .country-head h3 { margin: 0; color: var(--c-primary); }
+    .country-count {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--c-p2);
+      background: var(--c-pale);
+      border-radius: 999px;
+      padding: 0.2rem 0.75rem;
+      white-space: nowrap;
+    }
+    .collab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: var(--sp-sm);
+    }
+    .collab-item {
+      background: var(--c-white);
+      border: 1px solid var(--c-border);
+      border-radius: var(--r-md);
+      box-shadow: var(--sh-sm);
+      padding: var(--sp-sm);
+      transition: box-shadow .2s ease, transform .2s ease;
+    }
+    .collab-item:hover { box-shadow: var(--sh-md); transform: translateY(-2px); }
+    .collab-item .name { font-weight: 600; color: var(--c-text); display: block; }
+    .collab-item .inst { font-size: 0.86rem; color: var(--c-muted); display: block; margin-top: 0.2rem; }
+  </style>
 </head>
 <body>
 
@@ -185,10 +224,337 @@
       <div class="sec-head">
         <span class="sec-label">Growing Network</span>
         <h2 id="members-heading">Collaborators</h2>
-        <p>REP-COM's strength comes from the participation of labs and researchers across institutions worldwide.</p>
+        <p>REP-COM's strength comes from the participation of labs and researchers across institutions worldwide — 54 collaborators across 14 countries.</p>
       </div>
-      <div style="text-align:center; padding: var(--sp-xl) var(--sp-lg); border: 2px dashed var(--c-border); border-radius: var(--r-lg); color: var(--c-muted);">
-        <p style="margin: 0;">Community directory to be added soon.</p>
+      <div class="collab-directory">
+        <div class="country-block">
+          <div class="country-head">
+            <h3>The Netherlands</h3>
+            <span class="country-count">25 collaborators</span>
+          </div>
+          <div class="collab-grid">
+            <div class="collab-item">
+              <span class="name">Monique Alblas</span>
+              <span class="inst">University of Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Bert Bakker</span>
+              <span class="inst">University of Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Camiel J. Beukeboom</span>
+              <span class="inst">Vrije Universiteit Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Spela Dolinsek</span>
+              <span class="inst">University of Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Ellen Droog</span>
+              <span class="inst">Vrije Universiteit Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Roeland Dubèl</span>
+              <span class="inst">University of Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Anita Eerland</span>
+              <span class="inst">Radboud University</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Marieke Fransen</span>
+              <span class="inst">Radboud University</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Maaike D. Homan</span>
+              <span class="inst">University of Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Carolin Ischen</span>
+              <span class="inst">University of Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Loes Janssen</span>
+              <span class="inst">Tilburg University</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Gijsje Maas</span>
+              <span class="inst">Radboud University</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Philipp Masur</span>
+              <span class="inst">Vrije Universiteit Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Saar Mollen</span>
+              <span class="inst">University of Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Delaney Peterson</span>
+              <span class="inst">University of Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Monique Pollmann</span>
+              <span class="inst">Tilburg University</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Giulia Ranzini</span>
+              <span class="inst">Vrije Universiteit Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Gijs Schumacher</span>
+              <span class="inst">University of Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Eline Smit</span>
+              <span class="inst">University of Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Bas van den Putte</span>
+              <span class="inst">University of Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Dian van Huijstee</span>
+              <span class="inst">Vrije Universiteit Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Guido van Koningsbruggen</span>
+              <span class="inst">Vrije Universiteit Amsterdam</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Aart van Stekelenburg</span>
+              <span class="inst">Radboud University</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Lisa Vandeberg</span>
+              <span class="inst">Radboud University</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Ivar Vermeulen</span>
+              <span class="inst">Vrije Universiteit Amsterdam</span>
+            </div>
+          </div>
+        </div>
+        <div class="country-block">
+          <div class="country-head">
+            <h3>USA</h3>
+            <span class="country-count">7 collaborators</span>
+          </div>
+          <div class="collab-grid">
+            <div class="collab-item">
+              <span class="name">Mary E. Andrews</span>
+              <span class="inst">Stony Brook University</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Benjamin Bates</span>
+              <span class="inst">Ohio University</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Benjamin Johnson</span>
+              <span class="inst">University of Florida</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Ruobing Li</span>
+              <span class="inst">Stony Brook University</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Athar Memon</span>
+              <span class="inst">Ohio University</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Steve Rains</span>
+              <span class="inst">University of Arizona</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Christopher Skurka</span>
+              <span class="inst">Pennsylvania State University</span>
+            </div>
+          </div>
+        </div>
+        <div class="country-block">
+          <div class="country-head">
+            <h3>Germany</h3>
+            <span class="country-count">4 collaborators</span>
+          </div>
+          <div class="collab-grid">
+            <div class="collab-item">
+              <span class="name">Francis Alpers</span>
+              <span class="inst">Technische Universität Ilmenau</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Matthias R. Hastall</span>
+              <span class="inst">TU Dortmund University</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Elena Link</span>
+              <span class="inst">University of Mainz</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Sebastian Scherr</span>
+              <span class="inst">University of Augsburg</span>
+            </div>
+          </div>
+        </div>
+        <div class="country-block">
+          <div class="country-head">
+            <h3>Belgium</h3>
+            <span class="country-count">3 collaborators</span>
+          </div>
+          <div class="collab-grid">
+            <div class="collab-item">
+              <span class="name">Greet Hendrickx</span>
+              <span class="inst">Universiteit Antwerpen</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Karolien Poels</span>
+              <span class="inst">Universiteit Antwerpen</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Cas von Winckelman</span>
+              <span class="inst">KU Leuven</span>
+            </div>
+          </div>
+        </div>
+        <div class="country-block">
+          <div class="country-head">
+            <h3>Greece</h3>
+            <span class="country-count">3 collaborators</span>
+          </div>
+          <div class="collab-grid">
+            <div class="collab-item">
+              <span class="name">Sissy Karakitsou</span>
+              <span class="inst">The American College of Greece</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Christina Makri</span>
+              <span class="inst">The American College of Greece</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Diamantis Petropoulos-Petalas</span>
+              <span class="inst">The American College of Greece</span>
+            </div>
+          </div>
+        </div>
+        <div class="country-block">
+          <div class="country-head">
+            <h3>Switzerland</h3>
+            <span class="country-count">3 collaborators</span>
+          </div>
+          <div class="collab-grid">
+            <div class="collab-item">
+              <span class="name">Janine Blessing</span>
+              <span class="inst">University of Zurich</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Alexander Ort</span>
+              <span class="inst">Universität Luzern</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Freya Sukalla</span>
+              <span class="inst">Universität Zürich</span>
+            </div>
+          </div>
+        </div>
+        <div class="country-block">
+          <div class="country-head">
+            <h3>Austria</h3>
+            <span class="country-count">2 collaborators</span>
+          </div>
+          <div class="collab-grid">
+            <div class="collab-item">
+              <span class="name">Kathrin Karsay</span>
+              <span class="inst">University of Vienna</span>
+            </div>
+            <div class="collab-item">
+              <span class="name">Matt Minich</span>
+              <span class="inst">University of Vienna</span>
+            </div>
+          </div>
+        </div>
+        <div class="country-block">
+          <div class="country-head">
+            <h3>Australia</h3>
+            <span class="country-count">1 collaborator</span>
+          </div>
+          <div class="collab-grid">
+            <div class="collab-item">
+              <span class="name">Celine Klemm</span>
+              <span class="inst">Monash University</span>
+            </div>
+          </div>
+        </div>
+        <div class="country-block">
+          <div class="country-head">
+            <h3>Chile</h3>
+            <span class="country-count">1 collaborator</span>
+          </div>
+          <div class="collab-grid">
+            <div class="collab-item">
+              <span class="name">Cristian Buzeta</span>
+              <span class="inst">University of Chile</span>
+            </div>
+          </div>
+        </div>
+        <div class="country-block">
+          <div class="country-head">
+            <h3>Portugal</h3>
+            <span class="country-count">1 collaborator</span>
+          </div>
+          <div class="collab-grid">
+            <div class="collab-item">
+              <span class="name">Ana Guilhermina Seixas Duarte Melo</span>
+              <span class="inst">Universidade do Minho</span>
+            </div>
+          </div>
+        </div>
+        <div class="country-block">
+          <div class="country-head">
+            <h3>Romania</h3>
+            <span class="country-count">1 collaborator</span>
+          </div>
+          <div class="collab-grid">
+            <div class="collab-item">
+              <span class="name">Alina Duduciuc</span>
+              <span class="inst">National University of Political Science and Public Administration</span>
+            </div>
+          </div>
+        </div>
+        <div class="country-block">
+          <div class="country-head">
+            <h3>Slovenia</h3>
+            <span class="country-count">1 collaborator</span>
+          </div>
+          <div class="collab-grid">
+            <div class="collab-item">
+              <span class="name">Sara Atanasova</span>
+              <span class="inst">University of Ljubljana</span>
+            </div>
+          </div>
+        </div>
+        <div class="country-block">
+          <div class="country-head">
+            <h3>South Africa</h3>
+            <span class="country-count">1 collaborator</span>
+          </div>
+          <div class="collab-grid">
+            <div class="collab-item">
+              <span class="name">Jason Bantjes</span>
+              <span class="inst">Stellenbosch University</span>
+            </div>
+          </div>
+        </div>
+        <div class="country-block">
+          <div class="country-head">
+            <h3>Suriname</h3>
+            <span class="country-count">1 collaborator</span>
+          </div>
+          <div class="collab-grid">
+            <div class="collab-item">
+              <span class="name">Nancy Ho-A-Tham</span>
+              <span class="inst">Anton de Kom Universiteit van Suriname</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
